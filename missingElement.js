@@ -1,4 +1,4 @@
-let a = [121,120,123,125,124,122,127];
+let a = [21,25,29,28,22,24,27,26,30];
 let len=a.length;
  //sort array
 let b=a.sort();
