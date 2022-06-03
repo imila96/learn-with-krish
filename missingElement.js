@@ -1,32 +1,50 @@
-let a = [121,120,124,123,125];
+let a = [121,120,123,125,124,122,127];
 let len=a.length;
-  
+ //sort array
 let b=a.sort();
 
 let min=b[0];
 let max=b[len-1]
 
-    let answer=missingNo(a,b[0],len,min,max);
+    let answer=missingNo(b,b[0],len,min,max);//calling the function
     console.log(answer);
 
 function missingNo(elt,e1,length,min,max){
 
-    let missingElt;
+//checking whether the elements sorted array are sequential or not.
+let arr = a;
+let differenceAry = arr.slice(1).map(function(n, i) { return n - arr[i]; })
+let isDifference= differenceAry.every(value => value == 1)
 
-if(min!=e1){
-    missingElt=e1;
-}
-else if(max!=e1+length){
-    missingElt=e1+length;
-}
-else{
-    for(let i=min;i<=max;i++){
-       
-        if(elt.indexOf(i)<0){
-           missingElt=i; 
-        }
-    } 
+console.log(isDifference);
+
+//if not sequential
+if(isDifference==false){
+	let sum = 0;
+
+for (let i = 0; i < elt.length; i++) {
+    sum += elt[i];
 }
 
-    return missingElt;
+let totalSum = Math.floor((max - min + 1) * (min + max) / 2);
+
+let missingElt=totalSum-sum;
+
+    return "The values in array are not sequential.So missing value is "+missingElt;
+	
+	
+	
+}else{
+	//if sequential
+	let startNo=min-1;
+	let endNo=max+1;
+	 return "The values in array are  sequential.So missing values could be either startNo :"+startNo+" or either end No :"+endNo;
 }
+
+	
+}
+  
+
+
+ 
+
