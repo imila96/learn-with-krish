@@ -1,0 +1,40 @@
+
+
+<div class="col-md-7 offset-md-3">
+    
+    <form (ngSubmit) = "onSubmit()" style="margin-top:60px ;">
+
+    
+       <div class="form-group">
+            <label> Fuel Type</label>
+            
+
+                <select class="form-control" id = "fuelType"
+                [(ngModel)] = "employee.fuelType" name = "fuelType">
+                    
+                    <option value="Petrol-95">Petrol-95</option>
+                    <option value="Petrol-92">Petrol-92</option>
+                    <option value="Diesel-Super">Diesel-Super</option>
+                    <option value="Diesel-Auto">Diesel-Auto</option>
+                  </select>
+        </div>
+       
+    
+        
+    
+        <div class="form-group">
+            <label> Quantity(in Litres)</label>
+            <input type="text" class ="form-control" id = "qty"
+                [(ngModel)] = "employee.qty" name = "qty">
+        </div>
+    
+        <div class="row">
+            <div class="col-sm-5">
+              <button class = "btn btn-success" type ="submit">Submit</button>
+            </div>
+            <div class="col-sm-5">
+              <button (click) = "goToEmployeeList()" class = "btn btn-info"> Track Your Order</button>
+            </div>
+          </div>
+          </form>
+    </div> 

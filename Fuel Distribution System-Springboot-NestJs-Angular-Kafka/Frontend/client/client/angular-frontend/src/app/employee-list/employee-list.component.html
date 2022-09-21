@@ -1,0 +1,29 @@
+<h2> Employee List</h2>
+<div class="row">
+    <div class="col-sm-5">
+    <button type="button" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
+    </div>
+    
+    <div class="col-sm-5">
+     <input type="text" class="form-control"  placeholder="Search your id here" #myinput  [(ngModel)] = "orderId"  (input)="Search2()" />
+    </div>
+ 
+    
+  </div>
+<table class = "table table-striped" style="margin-top: 20px;">
+    <thead>
+        <tr>
+            <th> Order Id</th>
+            <th> status</th>
+            <th> Dispatch Date </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of employees" >
+            <td> {{ employee.orderId }} </td>
+            <td> {{ employee.status}} </td>
+            <td> {{ employee.date }} </td>
+            
+        </tr>
+    </tbody>
+</table>
