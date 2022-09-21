@@ -1,0 +1,46 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Employee </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> id</label>
+            
+            
+            <input type="text" class ="form-control" id = "_id"
+                [(ngModel)] = "employee._id" name = "_id" readonly>
+        </div>
+    
+        
+    
+        <div class="form-group">
+           
+            
+            <label> Order Id</label>
+            <input type="text" class ="form-control" id = "orderId"
+                [(ngModel)] = "employee.orderId" name = "orderId" readonly>
+        </div>
+    
+        <div class="form-group">
+            <label> Order Status</label>
+            <select class="form-control" aria-label="Default select example" id = "status"
+                [(ngModel)] = "employee.status" name = "status">>
+  
+                 <option value="pending">pending</option>
+                <option value="dispatched">dispatched</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+           
+            
+            <label> Date</label>
+            <input type="text" class ="form-control" id = "date"
+                [(ngModel)] = "employee.date" name = "date" readonly>
+        </div>
+    
+       
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
